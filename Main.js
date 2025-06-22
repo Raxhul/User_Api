@@ -5,11 +5,12 @@ import Database from './Database/Database.js'
 
 // save it in a variable
 const app = express();
-
+const cors = require("cors");
 // port Number to listen
 const port = 2810;
 
 //the middle ware 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
