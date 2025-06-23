@@ -28,6 +28,15 @@ export const Create = async (req, res) => {
   }
 };
 
+export const View = async (req, res) => {
+  try {
+    // Use findOne by ID
+   const view = await User.findById({ _id: req.params.id });
+    res.status(200).json(view);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
 export const Update = async (req, res) => {
   try {
     // Use findOneAndUpdate to update by ID

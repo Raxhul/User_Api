@@ -1,10 +1,12 @@
 import express from "express";
 
-import { Create , Delete, Index, Update } from "../controller/controler.js";
+import { Create , Delete, Index, Update, View } from "../controller/controler.js";
 const router = express.Router();
 
 // r - get    - to see the data
 router.get("/", Index);
+
+router.get("/:id", View);
 
 // c - post   - create the data
 router.post("/", Create);
